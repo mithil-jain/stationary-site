@@ -31,8 +31,8 @@
 				<p class="formp">Username</p>
 				<input name="id" type=text placeholder="Enter username">
 				<p class="formp">Password</p>
-				<input name="pass" type=password placeholder="Enter password"><br><br>
-				<input type=submit name="login" value="Login"><br>
+				<input name="pass" type=password placeholder="Enter password"><br>
+				<input type=submit name="login" value="Login">
 				<input type=button value="Register" onclick="reset()">
 				<a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
 			</form>

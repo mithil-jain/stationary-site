@@ -12,7 +12,7 @@ body
 {
 	height:400px;
     width:300px;
-    background-color: rgba(255,255,255);
+    background-color: rgba(255,255,255,0.2);
     top:50%;
     left:50%;
     position:absolute;
@@ -51,6 +51,7 @@ input[type=text],input[type=password]
     border:0px;
     border-bottom: 1px solid black;
     padding:10 0 10 0;
+    background-color:inherit;
 }
 input[type=submit],input[type=button]
 {
@@ -94,22 +95,23 @@ form a
         padding:0;
         background-image: url(index_bg.jpg);
         background-repeat: no-repeat;
+        background-size:cover;
         background-size: auto;
         background-position:top;
         /*background-color:red;*/
     }
     .block
     {
-        height:400px;
-        width:300px;
-        background-color: rgba(255,255,255);
+        height:300px;
+        width:240px;
+        background-color: rgba(255,255,255,0.2);
         top:50%;
         left:50%;
         position:absolute;
-        transform: translate(-50%,-50%);
+        /*transform: translate(-50%,-50%);*/
         box-sizing: border-box;
-        box-shadow: 5px 5px 5px black;
-        padding:30px;
+        box-shadow: 3px 3px 3px black;
+        padding:20px;
     }
     .image
     {
@@ -117,22 +119,22 @@ form a
     }
     img
     {
-        height: 100px;
-        width: 100px;
+        height:70px;
+        width:70px;
         position:absolute;
-        top:-50px;
+        top:-35px;
         left:35%;
     }
     .form
     {
-        margin-top:50px;
+        margin-top:25px;
     }
     .formp
     {
         margin-top: 0px;
-        margin-bottom: 10px;
+        margin-bottom:5px;
         font-weight: bold;
-        font-size:20px;
+        font-size:17px;
     }
     input[type=text],input[type=password]
     {
@@ -140,13 +142,14 @@ form a
         width: 100%;
         border:0px;
         border-bottom: 1px solid black;
-        padding:10 0 10 0;
+        padding:5 0 5 0;
+        background-color:inherit; 
     }
     input[type=submit],input[type=button]
     {
         box-shadow:2px 2px 1px black;
         width:100%;
-        margin-bottom: 10px;
+        margin-bottom:5px;
         border-radius:10px;
         border:none;
         padding:5px;
@@ -160,8 +163,8 @@ form a
     }
     .forgot
     {
-        margin-top:0px;
-        font-size: 15px;
+        margin-top:5px;
+        font-size:12px;
     }
     form a 
     {
