@@ -2,13 +2,10 @@
 <title>Login</title>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link rel="stylesheet" type="text/css" href="Addons/index.css">
+	<link rel="stylesheet" type="text/css" href="Addons/home.css">
 	<script>
 		function forgot(){
 			window.alert("Mail ur details at peacock@gmail.com");
-		}
-		function reset() {
-			header("Location:register.php");
 		}
 	</script> 
 	<link rel="shortcut icon" href="Addons/title_img.ico" />
@@ -33,11 +30,15 @@
 				<p class="formp">Password</p>
 				<input name="pass" type=password placeholder="Enter password"><br>
 				<input type=submit name="login" value="Login">
-				<input type=button value="Register" onclick="reset()">
+				<input type=submit name="Register" value="Register">
 				<a href="" onclick="forgot()"><p class="forgot">Forgot your username or password?</p></a>
 			</form>
 	  	
 			<?php
+				if (isset($_POST['Register'])) {
+					header("Location: register.php");
+				}
+
 				if (isset($_POST['login'])&&$_POST['id']!="") {
 					validate();
 				}
