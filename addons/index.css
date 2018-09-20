@@ -95,9 +95,8 @@ form a
         padding:0;
         background-image: url(index_bg.jpg);
         background-repeat: no-repeat;
-        background-size:cover;
-        background-size: auto;
-        background-position:top;
+        background-size:auto;
+        background-position: center;
         /*background-color:red;*/
     }
     .block
