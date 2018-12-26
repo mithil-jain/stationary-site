@@ -19,7 +19,7 @@
 	<div class="block">
 	  
 		<div class="image">
-			<img src="Addons/person-flat.png" alt="P">
+			<img src="addons/person-flat.png" alt="P">
 		</div>
 	  
 		<div class="form">
@@ -38,26 +38,39 @@
 				if (isset($_POST['Register'])) {
 					header("Location: register.php");
 				}
-
-				if (isset($_POST['login'])&&$_POST['id']!="") {
+                
+				if (isset($_POST['login'])&&$_POST['id']!=""&&$_POST['pass']!="") {
 					validate();
 				}
 
 				function validate()
 				{
-					// if ($_POST['pass'] == "root" && $_POST['id'] == "0") {
-						session();
-					// }
+					$user = 'user';
+					$pass = 'sakec';
+					$db = 'stationary';
 
-					// else {
-					// 	echo '<p class="error">Wrong Id or Password</p>';
-					// }
+					$conn = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect to server".$db);
+
+					$check = "SELECT Pass FROM profile WHERE UId=\"".$_POST['id']."\"";
+
+					$data = mysqli_query($conn, $check) or die("User not found.");
+
+					$row = mysqli_fetch_assoc($data);
+
+					if ($_POST['pass'] == $row['Pass']) {
+						mysqli_close($conn);
+						session();
+					}
+
+					else {
+						echo '<p class="error">Wrong Id or Password</p>';
+					}
 				}
 
 				function session() {
 					session_start();
-					// $_SESSION['type']="admin";
-					$_SESSION['id']=$_POST['id'];
+
+					$_SESSION['id'] = $_POST['id'];
 
 					if ($_SESSION['id']=='0')
 					{
@@ -65,6 +78,7 @@
 					}
 					else
 					{
+						$_SESSION['cart'] = array();
 						header("Location: User/");
 					}
 				}
